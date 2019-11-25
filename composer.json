@@ -6,7 +6,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {"Anax\\": "src/",
-        "malp16\\": "src/"}
+        "malp16\\": "src/" }
     },
     "require": {
         "anax/anax-ramverk1-me": "^1.0.0"

@@ -49,7 +49,9 @@ class IPRestController implements ContainerInjectableInterface
         $ip = $_GET["ip"] ?? null;
         $ipCheck = new IP($ip);
 
-        $json = [ $ipCheck->getJsonArray() ];
+         $json = [ $ipCheck->getJsonArray() ];
+
+
 
         return [$json];
     }

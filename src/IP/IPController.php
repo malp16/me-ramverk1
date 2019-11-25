@@ -6,9 +6,7 @@ use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
 
 /**
- * A sample controller to show how a controller class can be implemented.
- * The controller will be injected with $di if implementing the interface
- * ContainerInjectableInterface, like this sample class does.
+ * A IPController that tests ip-addresses
  * The controller is mounted on a particular route and can then handle all
  * requests for that mount point.
  *
@@ -18,7 +16,13 @@ class IPController implements ContainerInjectableInterface
 {
     use ContainerInjectableTrait;
 
-
+    // /**
+    //  * This  method action takes one argument as a post variable:
+    //  * POST mountpoint/json
+    //  *
+    //  *
+    //  * @return array
+    //  */
     public function jsonActionPost() : array
     {
         $ip = $_POST["ip"] ?? null;
@@ -35,13 +39,10 @@ class IPController implements ContainerInjectableInterface
     //  *
     //  * @param mixed $value
     //  *
-    //  * @return string
+    //  * @return page
     //  */
     public function argumentActionGet($value) : object
     {
-        // Deal with the action and return a response.
-        //return __METHOD__ . ", \$db is {$this->db}, got argument '$value'";
-
         $page = $this->di->get("page");
         $session = $this->di->get("session");
 
@@ -72,15 +73,15 @@ class IPController implements ContainerInjectableInterface
      */
     public function catchAll(...$args)
     {
-        // Deal with the action and return a response.
-        //return __METHOD__ . ", \$db is {$this->db}, got argument '$value'";
-
         $page = $this->di->get("page");
         $session = $this->di->get("session");
 
         $ip = $_POST["ip"] ?? null;
+        //fungerar också men får ju ändå inte bort berondet av $_POST
+        // if (isset($_POST['performCheck'])) {
+        //     $this->di->session->set("ip", $_POST['ip']);
+        // }
         $ipCheck = new IP($ip);
-        //$validityStatement="";
 
         if ($ip != null) {
             $data = [
@@ -96,8 +97,5 @@ class IPController implements ContainerInjectableInterface
             $page->add("anax/v2/article/default", $data);
 
             return $page->render();
-        //Deal with the request and send an actual response, or not.
-        // return __METHOD__ . ", \$db is {$this->db}, got '" . count($args) . "' arguments: " . implode(", ", $args);
-        // return;
     }
 }

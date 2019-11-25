@@ -49,9 +49,14 @@ return [
             "title" => "Verktyg och möjligheter för utveckling.",
         ],
         [
-            "text" => "Check IP-nummer",
+            "text" => "Testa IP-nummer",
             "url" => "checkIP",
             "title" => "Check IP-nummer",
+        ],
+        [
+            "text" => "Hitta plats",
+            "url" => "geoIP",
+            "title" => "Location",
         ],
     ],
 ];

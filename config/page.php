@@ -18,8 +18,9 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                "css/myKmom01.min.css",
-                "css/dbwebb-se.min.css",
+                "css/myKomom01.min.css",
+                //"css/dbwebb-se.min.css",
+                //"css/myKmom01.min.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",
