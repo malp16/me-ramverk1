@@ -27,3 +27,4 @@ Källkoden på sidan finns tillgänglig på GitHub [malp16/anax-flat](https://gi
 <i class="fab fa-laravel fa-8x"></i>
 <i class="fab fa-symfony fa-6x"></i>
 <i class="fab fa-php fa-10x"></i>
+<i class="fas fa-cloud"></i>

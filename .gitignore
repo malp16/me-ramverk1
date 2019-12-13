@@ -4,3 +4,4 @@
 memory::
 composer.lock
 /src/IP/IPGeoKey.php
+/config/secrets.php
